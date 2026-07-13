@@ -1,0 +1,9 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#071014"/>
+  <path d="M0 560 260 374 420 456 632 274 828 408 1200 202v558H0Z" fill="#142020"/>
+  <path d="M0 620 290 428 448 506 654 334 830 478 1200 276v484H0Z" fill="#1b2a28"/>
+  <path d="M112 562c184-48 324-58 518 2 158 49 282 48 458-18" fill="none" stroke="#db0505" stroke-opacity=".42" stroke-width="2"/>
+  <circle cx="804" cy="254" r="132" fill="#ff3b3b" opacity=".14"/>
+  <text x="64" y="104" fill="#f4f5f0" font-family="Arial, sans-serif" font-size="56">HOKA MAFATE</text>
+  <text x="66" y="154" fill="#ff3b3b" font-family="Arial, sans-serif" font-size="20">TERRAIN / VEGETATION / RENDER</text>
+</svg>

@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#081012"/>
+  <g opacity=".72">
+    <path d="M0 566c164-80 304-90 468-36 152 51 304 38 450-46 108-62 200-76 282-42v318H0Z" fill="#dfe8e9" opacity=".1"/>
+    <path d="M0 624c158-72 316-82 482-25 140 48 292 41 438-28 110-52 202-67 280-38v227H0Z" fill="#f4f5f0" opacity=".16"/>
+  </g>
+  <g fill="#f4f5f0" opacity=".52">
+    <circle cx="246" cy="188" r="2"/><circle cx="392" cy="268" r="3"/><circle cx="520" cy="176" r="2"/><circle cx="710" cy="246" r="3"/><circle cx="894" cy="164" r="2"/><circle cx="1030" cy="284" r="3"/>
+  </g>
+  <path d="M292 416c140-86 278-96 414-30 76 37 152 42 228 14" fill="none" stroke="#ff3b3b" stroke-opacity=".44" stroke-width="3"/>
+  <text x="70" y="104" fill="#f4f5f0" font-family="Arial, sans-serif" font-size="54">THE NORTH FACE</text>
+  <text x="72" y="154" fill="#ff3b3b" font-family="Arial, sans-serif" font-size="20">SIMULATION / MATERIAL / RENDER</text>
+</svg>

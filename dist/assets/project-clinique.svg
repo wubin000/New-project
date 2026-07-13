@@ -1,0 +1,9 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#060709"/>
+  <rect x="148" y="104" width="904" height="552" rx="0" fill="#11191b" stroke="#ffffff" stroke-opacity=".14"/>
+  <circle cx="602" cy="382" r="190" fill="none" stroke="#ff3b3b" stroke-opacity=".54" stroke-width="2"/>
+  <circle cx="602" cy="382" r="118" fill="#ff3b3b" opacity=".08"/>
+  <path d="M346 382h512M602 126v512" stroke="#db0505" stroke-opacity=".32"/>
+  <text x="76" y="104" fill="#f4f5f0" font-family="Arial, sans-serif" font-size="54">CLINIQUE</text>
+  <text x="78" y="154" fill="#db0505" font-family="Arial, sans-serif" font-size="20">SCENE / LIGHTING / NUKE</text>
+</svg>

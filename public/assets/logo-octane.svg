@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Octane">
+  <rect width="160" height="160" rx="34" fill="#0c1010"/>
+  <circle cx="80" cy="76" r="50" fill="none" stroke="#e8f0ef" stroke-width="10"/>
+  <circle cx="80" cy="76" r="24" fill="#d8ef2f"/>
+  <path d="M42 115c24 18 52 18 76 0" fill="none" stroke="#d8ef2f" stroke-width="9" stroke-linecap="round"/>
+  <text x="80" y="136" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#f7fbff">OCTANE</text>
+</svg>

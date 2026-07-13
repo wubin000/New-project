@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="C4D">
+  <rect width="160" height="160" rx="34" fill="#08111f"/>
+  <circle cx="80" cy="80" r="54" fill="none" stroke="#4fb8ff" stroke-width="14"/>
+  <circle cx="101" cy="57" r="28" fill="#102d59" stroke="#b9ecff" stroke-width="7"/>
+  <text x="80" y="126" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#f7fbff">C4D</text>
+</svg>

@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#050608"/>
+  <g opacity=".38" stroke="#f4f5f0">
+    <path d="M160 180h880M160 300h880M160 420h880M160 540h880"/>
+    <path d="M240 100v560M400 100v560M560 100v560M720 100v560M880 100v560"/>
+  </g>
+  <path d="M304 500 520 182l180 250 126-118 142 186Z" fill="#ff3b3b" opacity=".14"/>
+  <path d="M304 500 520 182l180 250 126-118 142 186Z" fill="none" stroke="#db0505" stroke-opacity=".58" stroke-width="2"/>
+  <circle cx="724" cy="286" r="96" fill="#db0505" opacity=".12"/>
+  <text x="70" y="104" fill="#f4f5f0" font-family="Arial, sans-serif" font-size="54">AIGC CAMPAIGNS</text>
+  <text x="72" y="154" fill="#db0505" font-family="Arial, sans-serif" font-size="20">AI + 3D COMMERCIAL VISUALS</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Redshift">
+  <rect width="160" height="160" rx="34" fill="#140708"/>
+  <path d="M80 25l50 86H30z" fill="#db0505"/>
+  <path d="M80 49l28 48H52z" fill="#ffb2a8"/>
+  <path d="M42 121h76" stroke="#ff4a4a" stroke-width="9" stroke-linecap="round"/>
+  <text x="80" y="144" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#f7fbff">REDSHIFT</text>
+</svg>
