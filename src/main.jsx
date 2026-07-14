@@ -126,7 +126,7 @@ const projects = [
     video: '/assets/meituan-project-full.mp4',
     preview: '/assets/meituan-project-preview.mp4',
     layout: 'portrait',
-    description: '负责 SC001 镜头制作。',
+    description: '负责01镜头制作，以及其他部分镜头场景搭建。',
   },
   {
     title: '雅诗兰黛DW气垫',
@@ -267,6 +267,7 @@ const artTests = [
   { title: 'C4D Toon Test 03', type: 'Vertical Image', src: '/assets/art-mecha-03.jpg', description: 'C4D toon render art test.' },
   { title: 'Benz Render 01', type: 'Horizontal Image', layout: 'horizontal', src: '/assets/art-benchi-01.webp', description: 'Mercedes-Benz render art test.' },
   { title: 'Benz Render 02', type: 'Horizontal Image', layout: 'horizontal', src: '/assets/art-benchi-02.webp', description: 'Mercedes-Benz render art test.' },
+  { title: 'Benz Render 03', type: 'Horizontal Image', layout: 'horizontal', src: '/assets/art-benchi-03.webp', description: 'Mercedes-AMG render art test.' },
 ];
 
 const strengths = [
