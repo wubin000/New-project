@@ -1743,7 +1743,7 @@ video {
   }
 
   .selfMediaFramePortrait .selfMedia {
-    object-fit: contain;
+    object-fit: cover;
     background: #030303;
   }
 
