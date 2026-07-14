@@ -1734,12 +1734,21 @@ video {
 
   .selfMediaFramePortrait {
     min-height: 0;
-    aspect-ratio: 9 / 13.5;
+    aspect-ratio: 9 / 16;
   }
 
   .selfMedia {
     min-height: 0;
     object-fit: cover;
+  }
+
+  .selfMediaFramePortrait .selfMedia {
+    object-fit: contain;
+    background: #030303;
+  }
+
+  .selfProjectGlow:hover .selfMedia {
+    transform: none;
   }
 
   .selfProjectInfo {
