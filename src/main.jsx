@@ -146,6 +146,15 @@ const projects = [
     layout: 'portrait',
     description: 'DIGRUN app概念视频。',
   },
+  {
+    title: '雅诗兰黛',
+    tag: 'AIGC / Visual Film',
+    image: '/assets/project-aigc.svg',
+    video: '/assets/estee-lauder-project-full.mp4',
+    preview: '/assets/estee-lauder-project-preview.mp4',
+    layout: 'portrait',
+    description: '负责特效部分制作。',
+  },
 ];
 
 const selfProjects = [
@@ -169,23 +178,23 @@ const selfProjects = [
     description: '受到台剧《乩身》的启发，创作了《火尖枪》短片。使用 Houdini 制作特效，导入 C4D，Redshift 渲染，并 Nuke 合成。',
   },
   {
-    title: '3D Motion Draft',
+    title: '世界渲染大赛',
     type: 'Video / 3D',
     mediaType: 'video',
     src: '/assets/render-contest-self.mp4',
     preview: '/assets/render-contest-self-preview.mp4',
     poster: '/assets/project-aigc.svg',
-    description: '自研 3D 动态草案卡位，可替换为后续提供的原创视频或过程文件。',
+    description: '全流程制作 CG 短片。',
   },
   {
-    title: 'Vertical Video Study',
+    title: 'DATSUN',
     type: 'Vertical Video',
     mediaType: 'video',
     layout: 'portrait',
     src: '/assets/datsun-2047-self.mp4',
     preview: '/assets/datsun-2047-self-preview.mp4',
     poster: '/assets/project-aigc.svg',
-    description: '自研竖屏视频卡片占位，可替换为后续提供的竖屏动态作品。',
+    description: '尝试二维+3D结合。',
   },
   {
     title: '手机产品渲染',
@@ -196,6 +205,49 @@ const selfProjects = [
     preview: '/assets/phone-render-self-preview.mp4',
     poster: '/assets/project-aigc.svg',
     description: '自研手机产品视觉渲染，探索产品材质、灯光和镜头展示。',
+  },
+];
+
+const aigcCommercialProjects = [
+  {
+    title: '碧欧泉',
+    type: 'AIGC / Commercial',
+    mediaType: 'video',
+    layout: 'portrait',
+    src: '/assets/aigc-biotherm-full.mp4',
+    preview: '/assets/aigc-biotherm-preview.mp4',
+    poster: '/assets/project-aigc.svg',
+    description: 'AIGC 商业视觉项目，负责画面生成、动态视觉与成片输出。',
+  },
+  {
+    title: '1664',
+    type: 'AIGC / Commercial',
+    mediaType: 'video',
+    layout: 'portrait',
+    src: '/assets/aigc-1664-full.mp4',
+    preview: '/assets/aigc-1664-preview.mp4',
+    poster: '/assets/project-aigc.svg',
+    description: 'AIGC 商业视觉项目，负责画面生成、动态视觉与成片输出。',
+  },
+  {
+    title: '伊利',
+    type: 'AIGC / Commercial',
+    mediaType: 'video',
+    layout: 'portrait',
+    src: '/assets/aigc-yili-full.mp4',
+    preview: '/assets/aigc-yili-preview.mp4',
+    poster: '/assets/project-aigc.svg',
+    description: 'AIGC 商业视觉项目，负责画面生成、动态视觉与成片输出。',
+  },
+  {
+    title: '嘉士伯',
+    type: 'AIGC / Commercial',
+    mediaType: 'video',
+    layout: 'portrait',
+    src: '/assets/aigc-carlsberg-full.mp4',
+    preview: '/assets/aigc-carlsberg-preview.mp4',
+    poster: '/assets/project-aigc.svg',
+    description: 'AIGC 商业视觉项目，负责画面生成、动态视觉与成片输出。',
   },
 ];
 
@@ -536,6 +588,34 @@ function App() {
     track.scrollLeft = (loopPoint * Number(event.currentTarget.value)) / 100;
   };
 
+  const updateArtSliderFromPointer = (event) => {
+    const slider = artSliderRef.current;
+    const track = artTrackRef.current;
+    if (!slider || !track) return;
+    const rect = slider.getBoundingClientRect();
+    const x = Math.min(Math.max(event.clientX - rect.left, 0), rect.width);
+    const value = rect.width ? (x / rect.width) * 100 : 0;
+    const loopPoint = track.scrollWidth / 2;
+    slider.value = String(value);
+    track.scrollLeft = (loopPoint * value) / 100;
+  };
+
+  const handleArtSliderPointerDown = (event) => {
+    artAutoPausedRef.current = true;
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+    updateArtSliderFromPointer(event);
+  };
+
+  const handleArtSliderPointerMove = (event) => {
+    if (!event.currentTarget.hasPointerCapture?.(event.pointerId)) return;
+    updateArtSliderFromPointer(event);
+  };
+
+  const handleArtSliderPointerEnd = (event) => {
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
+    artAutoPausedRef.current = false;
+  };
+
   return (
     <main ref={rootRef}>
       {showEntry ? (
@@ -824,6 +904,64 @@ function App() {
           </div>
         </section>
 
+        <section className="aigcCommercial section" id="aigc-commercial">
+          <div className="shell sectionBigTitle" aria-hidden="true">AIGC Works</div>
+          <div className="shell sectionHeader">
+            <div className="sectionLabel">AIGC Commercial</div>
+            <h2>AIGC商业项目</h2>
+          </div>
+          <div className="aigcCommercialGrid shell">
+            {aigcCommercialProjects.map((item, index) => (
+              <BorderGlow
+                className="aigcCommercialGlow card-reveal"
+                key={item.title}
+                edgeSensitivity={24}
+                glowColor="0 82 56"
+                backgroundColor="rgba(13, 7, 8, 0.86)"
+                borderRadius={8}
+                glowRadius={36}
+                glowIntensity={0.9}
+                coneSpread={24}
+                colors={['#db0505', '#ff4a4a', '#7b0303']}
+                fillOpacity={0.32}
+              >
+                <article className="aigcCommercialCard">
+                  <div
+                    className="aigcCommercialMediaFrame"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => setActiveVideo(item)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        setActiveVideo(item);
+                      }
+                    }}
+                  >
+                    <LazyVideo
+                      className="aigcCommercialMedia image-reveal"
+                      src={item.preview || item.src}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster={item.poster}
+                      aria-label={`${item.title} AIGC商业项目视频`}
+                    />
+                  </div>
+                  <div className="aigcCommercialInfo">
+                    <span>{item.type}</span>
+                    <h3>
+                      {String(index + 1).padStart(2, '0')} / {item.title}
+                    </h3>
+                    <p>{item.description}</p>
+                  </div>
+                </article>
+              </BorderGlow>
+            ))}
+          </div>
+        </section>
+
         <section className="artTests section" id="art-tests">
           <div className="shell sectionBigTitle" aria-hidden="true">Art Tests</div>
           <div className="shell sectionHeader">
@@ -891,15 +1029,10 @@ function App() {
               step="0.1"
               defaultValue="0"
               onInput={handleArtSliderInput}
-              onPointerDown={() => {
-                artAutoPausedRef.current = true;
-              }}
-              onPointerUp={() => {
-                artAutoPausedRef.current = false;
-              }}
-              onPointerCancel={() => {
-                artAutoPausedRef.current = false;
-              }}
+              onPointerDown={handleArtSliderPointerDown}
+              onPointerMove={handleArtSliderPointerMove}
+              onPointerUp={handleArtSliderPointerEnd}
+              onPointerCancel={handleArtSliderPointerEnd}
               onBlur={() => {
                 artAutoPausedRef.current = false;
               }}
