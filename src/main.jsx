@@ -309,6 +309,8 @@ function App() {
   const [showEntry, setShowEntry] = useState(true);
   const [entryLeaving, setEntryLeaving] = useState(false);
   const [contentReady, setContentReady] = useState(false);
+  const verticalArtTests = artTests.filter((item) => item.layout !== 'horizontal');
+  const horizontalArtTests = artTests.filter((item) => item.layout === 'horizontal');
 
   const enterSite = () => {
     setContentReady(true);
@@ -985,9 +987,9 @@ function App() {
             onPointerCancel={handleArtPointerUp}
             aria-label="美术测试作品集，可拖拽横向浏览"
           >
-            {[...artTests, ...artTests].map((item, index) => (
+            {[...verticalArtTests, ...verticalArtTests].map((item, index) => (
               <BorderGlow
-                className={`artTestGlow card-reveal ${item.layout === 'horizontal' ? 'artTestGlowHorizontal' : ''}`}
+                className="artTestGlow card-reveal"
                 key={`${item.title}-${index}`}
                 edgeSensitivity={22}
                 glowColor="0 82 56"
@@ -1001,7 +1003,7 @@ function App() {
               >
                 <article className="artTestCard">
                   <div
-                    className={`artTestImageFrame ${item.layout === 'horizontal' ? 'artTestImageFrameHorizontal' : ''}`}
+                    className="artTestImageFrame"
                     role="button"
                     tabIndex={0}
                     onClick={() => {
@@ -1040,6 +1042,41 @@ function App() {
               }}
               aria-label="快速浏览美术测试图片"
             />
+          </div>
+          <div className="artTestHorizontalRow shell" aria-label="横版美术测试图片">
+            {horizontalArtTests.map((item) => (
+              <BorderGlow
+                className="artTestGlowHorizontal card-reveal"
+                key={item.title}
+                edgeSensitivity={22}
+                glowColor="0 82 56"
+                backgroundColor="rgba(13, 7, 8, 0.86)"
+                borderRadius={8}
+                glowRadius={34}
+                glowIntensity={0.84}
+                coneSpread={22}
+                colors={['#db0505', '#ff4a4a', '#7b0303']}
+                fillOpacity={0.3}
+              >
+                <article className="artTestCard">
+                  <div
+                    className="artTestImageFrame artTestImageFrameHorizontal"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => setActiveImage(item)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        setActiveImage(item);
+                      }
+                    }}
+                    aria-label={`查看 ${item.title}`}
+                  >
+                    <img className="artTestImage image-reveal" loading="lazy" decoding="async" src={item.src} alt={`${item.title} 美术测试图片`} />
+                  </div>
+                </article>
+              </BorderGlow>
+            ))}
           </div>
         </section>
 

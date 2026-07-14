@@ -1262,6 +1262,19 @@ video {
     0 0 24px rgba(219, 5, 5, 0.42);
 }
 
+.artTestHorizontalRow {
+  position: relative;
+  z-index: 1;
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.artTestHorizontalRow .artTestGlowHorizontal {
+  min-width: 0;
+}
+
 .imageModal {
   position: fixed;
   inset: 0;
@@ -1750,6 +1763,12 @@ video {
 
   .artTestGlowHorizontal {
     flex-basis: min(82vw, 420px);
+  }
+
+  .artTestHorizontalRow {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
   }
 }
 
