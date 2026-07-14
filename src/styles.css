@@ -1161,6 +1161,10 @@ video {
   flex: 0 0 clamp(260px, 21vw, 360px);
 }
 
+.artTestGlowHorizontal {
+  flex-basis: clamp(420px, 42vw, 720px);
+}
+
 .artTestCard {
   overflow: hidden;
   border-radius: inherit;
@@ -1176,6 +1180,10 @@ video {
     radial-gradient(circle at 50% 38%, rgba(219, 5, 5, 0.2), transparent 44%),
     #050608;
   cursor: zoom-in;
+}
+
+.artTestImageFrameHorizontal {
+  aspect-ratio: 16 / 9;
 }
 
 .artTestImage {
@@ -1738,6 +1746,10 @@ video {
   .selfProjectInfo p {
     font-size: 15px;
     line-height: 1.58;
+  }
+
+  .artTestGlowHorizontal {
+    flex-basis: min(82vw, 420px);
   }
 }
 

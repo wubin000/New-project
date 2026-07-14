@@ -265,6 +265,8 @@ const artTests = [
   { title: 'C4D Toon Test 01', type: 'Vertical Image', src: '/assets/art-mecha-01.jpg', description: 'C4D toon render art test.' },
   { title: 'C4D Toon Test 02', type: 'Vertical Image', src: '/assets/art-mecha-02.jpg', description: 'C4D toon render art test.' },
   { title: 'C4D Toon Test 03', type: 'Vertical Image', src: '/assets/art-mecha-03.jpg', description: 'C4D toon render art test.' },
+  { title: 'Benz Render 01', type: 'Horizontal Image', layout: 'horizontal', src: '/assets/art-benchi-01.webp', description: 'Mercedes-Benz render art test.' },
+  { title: 'Benz Render 02', type: 'Horizontal Image', layout: 'horizontal', src: '/assets/art-benchi-02.webp', description: 'Mercedes-Benz render art test.' },
 ];
 
 const strengths = [
@@ -985,7 +987,7 @@ function App() {
           >
             {[...artTests, ...artTests].map((item, index) => (
               <BorderGlow
-                className="artTestGlow card-reveal"
+                className={`artTestGlow card-reveal ${item.layout === 'horizontal' ? 'artTestGlowHorizontal' : ''}`}
                 key={`${item.title}-${index}`}
                 edgeSensitivity={22}
                 glowColor="0 82 56"
@@ -999,7 +1001,7 @@ function App() {
               >
                 <article className="artTestCard">
                   <div
-                    className="artTestImageFrame"
+                    className={`artTestImageFrame ${item.layout === 'horizontal' ? 'artTestImageFrameHorizontal' : ''}`}
                     role="button"
                     tabIndex={0}
                     onClick={() => {
@@ -1013,7 +1015,7 @@ function App() {
                     }}
                     aria-label={`查看 ${item.title}`}
                   >
-                    <img className="artTestImage image-reveal" loading="lazy" decoding="async" src={item.src} alt={`${item.title} 美术测试竖图`} />
+                    <img className="artTestImage image-reveal" loading="lazy" decoding="async" src={item.src} alt={`${item.title} 美术测试图片`} />
                   </div>
                 </article>
               </BorderGlow>
