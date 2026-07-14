@@ -1672,6 +1672,73 @@ video {
     font-size: 15px;
     line-height: 1.62;
   }
+
+  .selfWorks {
+    padding-top: 76px;
+  }
+
+  .selfWorks .sectionHeader {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .selfWorks .sectionHeader h2 {
+    margin-top: 8px;
+    font-size: clamp(40px, 12vw, 54px);
+    line-height: 1;
+  }
+
+  .selfWorks .sectionLabel {
+    font-size: 13px;
+  }
+
+  .selfProjectGrid {
+    margin-top: 34px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .selfProjectCard,
+  .selfProjectGlow:first-child .selfProjectCard,
+  .selfProjectCardPortrait {
+    min-height: 0;
+    grid-template-rows: auto auto;
+  }
+
+  .selfMediaFrame,
+  .selfProjectGlow:first-child .selfMediaFrame {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .selfMediaFramePortrait {
+    min-height: 0;
+    aspect-ratio: 9 / 13.5;
+  }
+
+  .selfMedia {
+    min-height: 0;
+    object-fit: cover;
+  }
+
+  .selfProjectInfo {
+    padding: 22px 22px 26px;
+  }
+
+  .selfProjectInfo span {
+    font-size: 12px;
+  }
+
+  .selfProjectInfo h3 {
+    margin: 10px 0 12px;
+    font-size: clamp(28px, 8.8vw, 36px);
+    line-height: 1.08;
+  }
+
+  .selfProjectInfo p {
+    font-size: 15px;
+    line-height: 1.58;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
