@@ -1168,14 +1168,14 @@ function App() {
       ) : null}
 
       {activeVideo ? (
-        <div className="videoModal" role="dialog" aria-modal="true" aria-label={`${activeVideo.title} 播放窗口`}>
+        <div className={`videoModal ${activeVideo.layout === 'portrait' ? 'videoModalPortrait' : ''}`} role="dialog" aria-modal="true" aria-label={`${activeVideo.title} 播放窗口`}>
           <button className="videoModalBackdrop" type="button" aria-label="关闭视频" onClick={() => setActiveVideo(null)} />
           <div className={`videoModalPanel ${activeVideo.layout === 'portrait' ? 'videoModalPanelPortrait' : ''}`}>
             <button className="videoModalClose" type="button" onClick={() => setActiveVideo(null)} aria-label="关闭视频">
               Close
             </button>
             <video
-              className="videoModalPlayer"
+              className={`videoModalPlayer ${activeVideo.layout === 'portrait' ? 'videoModalPlayerPortrait' : ''}`}
               src={activeVideo.src || activeVideo.video}
               poster={activeVideo.poster}
               controls

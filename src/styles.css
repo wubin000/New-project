@@ -1090,7 +1090,8 @@ video {
 }
 
 .videoModalPanelPortrait {
-  width: min(520px, 72vw);
+  width: min(520px, 72vw, calc(88vh * 9 / 16));
+  aspect-ratio: 9 / 16;
 }
 
 .videoModalPlayer {
@@ -1099,6 +1100,11 @@ video {
   max-height: 88vh;
   object-fit: contain;
   background: #000;
+}
+
+.videoModalPlayerPortrait {
+  height: 100%;
+  aspect-ratio: 9 / 16;
 }
 
 .videoModalClose {
@@ -1127,6 +1133,38 @@ video {
   color: #050505;
   border-color: var(--red);
   background: var(--red);
+}
+
+@media (max-width: 767px) {
+  .videoModal {
+    padding: 18px;
+    align-items: center;
+  }
+
+  .videoModalPanel {
+    width: min(94vw, 1180px);
+    max-height: 86vh;
+  }
+
+  .videoModalPanelPortrait {
+    width: min(88vw, calc(86vh * 9 / 16));
+    max-height: 86vh;
+    aspect-ratio: 9 / 16;
+  }
+
+  .videoModalPlayer {
+    max-height: 86vh;
+  }
+
+  .videoModalPlayerPortrait {
+    height: 100%;
+    max-height: none;
+  }
+
+  .videoModalClose {
+    top: 12px;
+    right: 12px;
+  }
 }
 
 .artTests {
